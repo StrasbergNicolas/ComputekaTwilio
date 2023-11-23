@@ -24,6 +24,7 @@ let records = []
 router.get('/', (req, res) => {
     //const lenguaje = req.params.phone;
     //messageComputeka()
+    console.log("funciona")
     res.send('Bienvenidos al servidor de computeka!')
 })
 
