@@ -1,16 +1,3 @@
-messageComputeka = async (compra) => {
-    const client = new twilio.Twilio(compra.user,compra.password);
-
-    // Envía un mensaje SMS
-    const message = await client.messages.create({
-        body: 'Gracias por elegirnos',
-        from: '+17632251050',
-        to: '+1126415737',
-    });
-
-    return { statusCode: 200, body: JSON.stringify(message) };
-};
-
 const twilio= require("twilio")
 const serverless = require('serverless-http')
 const router = express.Router()
@@ -40,3 +27,17 @@ router.listen(port, () => {
 
 router.use('/.netlify/functions/api', router)
 module.exports.handler = serverless(app)
+
+messageComputeka = async (compra) => {
+    const client = new twilio.Twilio(compra.user,compra.password);
+
+    // Envía un mensaje SMS
+    const message = await client.messages.create({
+        body: 'Gracias por elegirnos',
+        from: '+17632251050',
+        to: '+1126415737',
+    });
+
+    return { statusCode: 200, body: JSON.stringify(message) };
+};
+
