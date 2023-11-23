@@ -4,6 +4,7 @@
 "description": "",
 "main": "app.js",
 "scripts": {
+  "start": "./node_modules/.bin/netlify-lambda serve src",
   "build": "netlify deploy --prod"
 },
   "dependencies": {
